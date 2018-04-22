@@ -6,9 +6,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
+import { loginAsync, watchLoginAsync } from 'containers/LoginContainer/saga';
 import createReducer from './reducers';
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware(loginAsync, watchLoginAsync);
 
 export default function configureStore(initialState = {}, history) {
   // Create the store with two middlewares

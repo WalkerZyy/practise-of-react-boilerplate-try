@@ -1,9 +1,10 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { shallow } from 'enzyme';
 
 import HomePage from '../index';
-import messages from '../messages';
+import Block from '../Block';
+import { blockList } from '../messages';
+
 
 describe('<HomePage />', () => {
   it('should render the page message', () => {
@@ -11,7 +12,9 @@ describe('<HomePage />', () => {
       <HomePage />
     );
     expect(renderedComponent.contains(
-      <FormattedMessage {...messages.header} />
+      <Block {...blockList[1]}></Block>,
+      <Block {...blockList[2]}></Block>,
+      <Block {...blockList[3]}></Block>
     )).toEqual(true);
   });
 });

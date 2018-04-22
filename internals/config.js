@@ -2,6 +2,28 @@ const resolve = require('path').resolve;
 const pullAll = require('lodash/pullAll');
 const uniq = require('lodash/uniq');
 
+const oldExclude = ['chalk',
+  'compression',
+  'cross-env',
+  'express',
+  'ip',
+  'minimist',
+  'sanitize.css'];
+/*
+* 阿西吧，果然前后端分开比较好呢，还要特地把每个新加的后端包都exclude了，真是阿西吧呢
+*/
+const myExcludeServer = [
+  'pg',
+  'pg-hstore',
+  'sequelize',
+  'sequelize-cli',
+  'graphql',
+  'graphql-relay',
+  'express-graphql',
+  'cors',
+  'express-jwt',
+];
+
 const ReactBoilerplate = {
   // This refers to the react-boilerplate version this project is based on.
   version: '3.5.0',
@@ -20,14 +42,9 @@ const ReactBoilerplate = {
        * we need to exclude dependencies which are not intended for the browser
        * by listing them here.
        */
+
       exclude: [
-        'chalk',
-        'compression',
-        'cross-env',
-        'express',
-        'ip',
-        'minimist',
-        'sanitize.css',
+        ...oldExclude, ...myExcludeServer,
       ],
 
       /**

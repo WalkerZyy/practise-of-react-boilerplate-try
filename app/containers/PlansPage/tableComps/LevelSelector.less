@@ -1,0 +1,54 @@
+@defaultBgHover:#cccccc;
+
+@gray:#f3f3f3;
+.ant-select-dropdown-menu-item.level-selector-option-nohurry{
+  background-color:@gray!important;
+  &:hover{
+    background-color:lighten(@gray,10%) !important;
+  }
+}
+.level-selector-option-nohurry{
+  .ant-select-selection{
+    background-color:@gray!important;
+  }
+}
+
+@green:#6af2c3;
+.ant-select-dropdown-menu-item.level-selector-option-need{
+  background-color:lighten(@green,10%)!important;color:white!important;
+  &:hover{
+    background-color:@green !important;
+  }
+}
+.level-selector-option-need{
+  .ant-select-selection{
+    background-color:lighten(@green,10%)!important;color:white!important;
+  }
+}
+
+@orange:#f7c15e;
+.ant-select-dropdown-menu-item.level-selector-option-must{
+  background-color:lighten(@orange,10%)!important;color:white!important;
+  &:hover{
+    background-color:@orange !important;
+  }
+}
+.level-selector-option-must{
+  .ant-select-selection{
+    background-color:lighten(@orange,10%)!important;color:white!important;
+  }
+}
+
+@red:#f97054;
+.ant-select-dropdown-menu-item.level-selector-option-first{
+  background-color:lighten(@red,10%) !important;color:white!important;
+  &:hover{
+    background-color:@red !important;
+  }
+}
+.level-selector-option-first{
+  .ant-select-selection{
+    background-color:lighten(@red,10%) !important;color:white!important;
+  }
+}
+

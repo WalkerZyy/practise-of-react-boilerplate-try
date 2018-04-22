@@ -1,0 +1,21 @@
+@import "iconfont";
+/*
+这里特别注意，我有个没删的global-styles.js
+这里面给app加的min-height:100%样式并不能被子元素的height继承，所以还是要单独设
+原则上，宏观的，或者不好写的才写在额外引用的less里
+ */
+#app{
+  background-color: #f9f9f9;position: relative;height:100%;
+}
+.ant-layout{
+  height:100%;
+}
+
+// 一些我可能会用的
+.absPosCenter{
+  top:0;left:0;right:0;bottom:0;position: absolute;margin: auto;
+}
+
+.hidden{
+  display: none;
+}

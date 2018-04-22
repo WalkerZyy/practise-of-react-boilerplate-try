@@ -16,14 +16,23 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import styled from 'styled-components';
+import PlansPage from 'containers/PlansPage/Loadable';
+import LoginPage from 'containers/LoginPage/Loadable';
+
+const MainContainer = styled.div`
+  height:100%;position:relative;
+`;
 
 export default function App() {
   return (
-    <div>
+    <MainContainer>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/plans" component={PlansPage} />
+        <Route exact path="/login" component={LoginPage} />
         <Route component={NotFoundPage} />
       </Switch>
-    </div>
+    </MainContainer>
   );
 }

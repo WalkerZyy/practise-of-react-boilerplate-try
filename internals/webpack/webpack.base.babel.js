@@ -41,7 +41,7 @@ module.exports = (options) => ({
               importLoaders: 1,
             },
           },
-          'less-loader'],
+          { loader: 'less-loader', options: { javascriptEnabled: true } }],
       },
       {
         // Preprocess 3rd party .css files located in node_modules
