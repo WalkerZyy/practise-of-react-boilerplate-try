@@ -68,7 +68,7 @@ export function* requestErrorHandler(e) {
       return;
     }
   } catch (error) {
-    console.log(error);
+    message.error(error);
   }
   let err = e;
   if (err.type) { err = err.message; }
