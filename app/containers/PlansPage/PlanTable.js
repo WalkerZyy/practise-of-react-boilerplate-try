@@ -46,9 +46,7 @@ function showDeleteConfirm(successFun) {
     onOk() {
       successFun();
     },
-    onCancel() {
-      console.log('Cancel');
-    },
+    onCancel() {},
   });
 }
 function sortCreate(a, b) { return moment(a.createdAt) - moment(b.createdAt); }
@@ -102,7 +100,7 @@ class PlanTable extends React.Component {
           value={text}
           onChange={this.onCellChange(record.id, 'level')}
         />
-        ),
+      ),
     }, {
       title: '开始时间',
       dataIndex: 'start',
@@ -128,7 +126,7 @@ class PlanTable extends React.Component {
     this.props.loadDataAsync(this.props.planStatus);
   }
   onCellChange = (id, dataIndex) => (value) => {
-    console.log('onCellChange', id, dataIndex, value);
+    // console.log('onCellChange', id, dataIndex, value);
     if (dataIndex === 'start') {
       this.props.updateDataAsync({ start: true, id });
     } else if (dataIndex === 'end') {

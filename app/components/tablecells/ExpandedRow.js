@@ -59,7 +59,7 @@ class ExpandedRowRender extends React.Component {
                 className="editable-row-icon-check"
                 onClick={this.check}
               />
-              <p>还可以输入 {500 - value.length} 字</p>
+              <p>还可以输入 {500 - value ? value.length : 0} 字</p>
             </div>
             :
             <div className="editable-row-wrapper">
@@ -78,7 +78,7 @@ class ExpandedRowRender extends React.Component {
 
 ExpandedRowRender.propTypes = {
   onChange: PropTypes.func,
-  txt: PropTypes.object,
+  txt: PropTypes.string,
 };
 
 export default ExpandedRowRender;
