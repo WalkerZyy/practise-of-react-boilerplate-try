@@ -144,6 +144,7 @@ function* createPlanAsync(action) {
     yield put({ type: ADD_TABLEDATA, data: dataToAdd });
     message.success('提交成功');
     yield put({ type: CLOSE_MODAL }); // 关闭新建PLAN的弹出层
+    if (typeof action.callback === 'function')action.callback(); // init 内部state
   } catch (e) {
     yield requestErrorHandler(e);
   }

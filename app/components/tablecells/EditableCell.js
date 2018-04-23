@@ -2,7 +2,7 @@ import React from 'react';
 import { Input, Icon } from 'antd';
 import PropTypes from 'prop-types';
 
-class EditableCell extends React.Component {
+class EditableCell extends React.PureComponent {
   state = {
     value: this.props.value,
     editable: false,

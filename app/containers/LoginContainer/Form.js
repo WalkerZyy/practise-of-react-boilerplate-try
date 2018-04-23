@@ -21,7 +21,7 @@ const LoginButton = styled(Button)`
 `;
 
 // Form表单创建
-class LoginForm extends React.Component {
+class LoginForm extends React.PureComponent {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {

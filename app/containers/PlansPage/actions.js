@@ -52,11 +52,12 @@ export function updateDataAsync(params) {
     params,
   };
 }
-export function createDataAsync(params) {
+export function createDataAsync(params, callback) {
   if (process.env.NODE_ENV === 'development')console.log('CREATE_PLAN_ASYNC', params);
   return {
     type: CREATE_PLAN_ASYNC,
     params,
+    callback,
   };
 }
 

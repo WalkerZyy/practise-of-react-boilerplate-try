@@ -28,7 +28,7 @@ function myTrim(x) {
 const max = planTextAreaMaxCnt;
 
 // 默认宽度是520，真好呢
-class NewPlanModal extends React.Component {
+class NewPlanModal extends React.PureComponent {
   componentWillMount() {
     this.initState();
   }
@@ -59,7 +59,7 @@ class NewPlanModal extends React.Component {
     this.setState({ showAlert: false });
     const { ...params } = this.state;
     params.start = params.startRightNow;
-    this.props.createDataAsync(params);
+    this.props.createDataAsync(params, () => (this.initState()));
   }
   closeAlert =() => {
     this.setState({ showAlert: false });

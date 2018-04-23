@@ -67,7 +67,7 @@ function sortEnd(a, b) {
   return (moment(a.end) - moment(b.end));
 }
 
-class PlanTable extends React.Component {
+class PlanTable extends React.PureComponent {
   constructor(props) {
     super(props);
     this.columns = [{

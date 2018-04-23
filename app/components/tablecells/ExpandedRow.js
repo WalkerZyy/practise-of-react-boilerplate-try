@@ -18,7 +18,7 @@ const MyTextArea = styled(TextArea)`
   }
 `;
 
-class ExpandedRowRender extends React.Component {
+class ExpandedRowRender extends React.PureComponent {
   state = {
     defaultValue: this.props.txt || '',
     value: this.props.txt || '',
