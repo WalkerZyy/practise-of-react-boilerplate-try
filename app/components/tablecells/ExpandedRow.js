@@ -20,8 +20,8 @@ const MyTextArea = styled(TextArea)`
 
 class ExpandedRowRender extends React.Component {
   state = {
-    defaultValue: this.props.txt,
-    value: this.props.txt,
+    defaultValue: this.props.txt || '',
+    value: this.props.txt || '',
     editable: false,
   }
   componentWillReceiveProps(nextProps) {
@@ -59,7 +59,7 @@ class ExpandedRowRender extends React.Component {
                 className="editable-row-icon-check"
                 onClick={this.check}
               />
-              <p>还可以输入 {500 - value ? value.length : 0} 字</p>
+              <p>还可以输入 {500 - (value ? value.length : 0)} 字</p>
             </div>
             :
             <div className="editable-row-wrapper">
