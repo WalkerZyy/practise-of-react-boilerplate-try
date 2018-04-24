@@ -26,10 +26,16 @@ class ExpandedRowRender extends React.PureComponent {
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.txt) {
-      this.setState({
-        defaultValue: nextProps.txt,
-        value: nextProps.txt,
-      });
+      if (this.state.editable) {
+        this.setState({
+          value: nextProps.txt,
+        });
+      } else {
+        this.setState({
+          value: nextProps.txt,
+          defaultValue: nextProps.txt,
+        });
+      }
     }
   }
   onTyping = (e) => {
